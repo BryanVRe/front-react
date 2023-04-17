@@ -1,22 +1,20 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import './index.css';
 import './App.css';
+import imagenRickMorty from "./img/rick-morty.png";
+import { useState } from 'react';
+import Characters from './components/Characters';
 
 function App() {
+  const [characters, setCharacters]=useState(null);
+  const reqApi = async () =>{
+    const api = await fetch('https://rickandmortyapi.com/api/character');
+    const characterApi = await api.json();
+    setCharacters(characterApi.results);
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Bryan Valerio Reyes zs20006768 </p>
-          <p>uv</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
