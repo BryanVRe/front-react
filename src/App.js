@@ -1,10 +1,10 @@
-
 //import logo from './logo.svg';
 import './index.css';
 import './App.css';
 import imagenRickMorty from "./img/rick-morty.png";
 import { useState } from 'react';
 import Characters from './components/Characters';
+
 
 function App() {
   const [characters, setCharacters]=useState(null);
