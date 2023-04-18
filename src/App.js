@@ -2,6 +2,7 @@
 import './index.css';
 import './App.css';
 import imagenRickMorty from "./img/rick-morty.png";
+import imagen from "./img/BRYAN.jpg";
 import { useState } from 'react';
 import Characters from './components/Characters';
 
@@ -24,11 +25,29 @@ function App() {
            <button onClick={reqApi} className="btn-search">
            Buscar personajes
            </button>
+           <div class="character-container1">
+            <div>
+           <img src={imagen} alt="Bryan" className="img-home1"/>
+           </div>
+         
+           <div >
+           <center className>
+            <h3>Bryan Valerio Reyes</h3>
+           <p>zs20006768</p>
+           <p>fsocietybvr@gmail.com</p>
+           </center>
+           </div>
+           </div>
           </>
+          
+          
+          
         )
         }
       </header>
     </div>
+
+    
   );
 }
 
