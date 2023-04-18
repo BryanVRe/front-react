@@ -1,15 +1,11 @@
-<<<<<<< HEAD:.github/workflows/master_ci_cd.yml
+
 name: master CI, CD workflow 
-=======
 
-name: release CI, CD workflow 
-
->>>>>>> 63b466d53f191a7c0e3df2dda41672c8a180e506:.github/workflows/release_ci_cd.yml
 on: 
   push:
-    branches: [ "release"]
+    branches: [ "master"]
   pull_request:
-    branches: [ "release"]
+    branches: [ "master"]
 jobs:
   release_ci_cd:
     runs-on: ubuntu-latest
@@ -48,11 +44,7 @@ jobs:
           docker cp build/.  serving_base:/usr/local/apache2/htdocs
           
       - name: Build the custom Docker image
-<<<<<<< HEAD:.github/workflows/master_ci_cd.yml
         run: docker commit --change "ENV MODEL_NAME ${{secrets.MODEL_NAME_MASTER}}" serving_base ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME_MASTER}}:${{github.sha}}
-=======
-        run: docker commit --change "ENV MODEL_NAME ${{secrets.MODEL_NAME_TEST}}" serving_base ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME_TEST}}:${{github.sha}}
->>>>>>> 63b466d53f191a7c0e3df2dda41672c8a180e506:.github/workflows/release_ci_cd.yml
 
       - name: show docker images
         run: docker images
